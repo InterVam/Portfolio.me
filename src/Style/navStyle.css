@@ -1,0 +1,65 @@
+.navBar{
+    display: flex;
+    flex-direction: column;
+    background-color: #d9d9d9;
+    align-items: left;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+}
+.navItems{
+    list-style-type: none;
+    width: fit-content; 
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    writing-mode: vertical-lr;
+    text-orientation: sideways-right;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    user-select: none;
+}
+
+.navbarList{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-inline-start: 0px;
+    justify-content: space-evenly;
+    height : 100vh;
+    padding: 5px;
+}
+
+.hoverText {
+    color: #cca43b;
+    transition:
+      0.35s font-weight,
+      0.35s color;
+  }
+  
+  .hoverText:hover {
+    font-weight: 900;
+    color: #a9a9a9;
+  }
+  
+  /* To the right */
+  .hoverText:hover + .hoverText {
+    font-weight: 500;
+    color: rgb(68, 68, 68);
+  }
+  
+  .hoverText:hover + .hoverText + .hoverText {
+    font-weight: 300;
+  }
+  
+  /* To the left */
+  .hoverText:has(+ .hoverText:hover) {
+    font-weight: 500;
+    color: rgb(68, 68, 68);
+  }
+  
+  .hoverText:has(+ .hoverText + .hoverText:hover) {
+    font-weight: 300;
+  }

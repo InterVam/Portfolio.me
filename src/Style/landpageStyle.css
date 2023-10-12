@@ -1,0 +1,6 @@
+.landPage{
+    height: 100vh;
+    display: grid;
+    grid-template-columns:1fr 20fr;
+    margin: -8px;
+}
