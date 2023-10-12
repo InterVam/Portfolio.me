@@ -1,5 +1,5 @@
 import anime from 'animejs/lib/anime.es.js';
-import '../Style/aboutStyle.css'
+import '../Style/welcomeStyle.css'
 import { useRef } from 'react';
 const BubbleText = ({name,type}) => {
     return (

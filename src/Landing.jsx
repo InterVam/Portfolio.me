@@ -1,6 +1,6 @@
 import './Style/landpageStyle.css'
 import Navbar from './Components/Navbar'
-import About from './Components/About'
+import About from './Components/Welcome'
 function Landing() {
   return (
 <div className='landPage'>
