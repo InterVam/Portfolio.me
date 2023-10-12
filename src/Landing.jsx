@@ -1,5 +1,5 @@
 import './Style/landpageStyle.css'
-import Navbar from './Components/navBar'
+import Navbar from './Components/Navbar'
 import About from './Components/About'
 function Landing() {
   return (
