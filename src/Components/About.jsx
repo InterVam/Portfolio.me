@@ -16,8 +16,12 @@ function About() {
     
     return (
         <div className="mainframe">
-             <BubbleText name="My name is Youssef Fathi" type="header"/>
-             <BubbleText name="Welcome to My Portfolio" type="welcome"/>
+             <BubbleText name="Hello!
+              I am Youssef Fathi" type="header"/>
+             
+             <span className='infoText'>I am a Junior Software Engineer , currently working on my Master's Degree at University of Ottawa.
+              I have a passion for Web and Cross-platform Mobile Development using ReactJS as well as working with new Backend Technologies. I am kind of 
+              also a big foodie so I'm your guy for any food recommendation. </span> 
             <DotGrid/>
             <h1>ZEBYYY</h1>
         </div>

@@ -50,29 +50,31 @@ border-radius: 50px;
     justify-content: center;
     align-items: center;
     font-family: 'Pixelify Sans', sans-serif;
-    font-size: 90px;
-    text-align: center;
+    font-size: 60px;
+    text-align: left;
     user-select: none;
     z-index: 100;
     top: 27%;
   left: 10%;
-
+  white-space: pre-line
 }
-.welcome{
+.infoText{
+   
     list-style-type: none;
-    width: fit-content; 
+    color: #ffffff;
+    width: 60vw; 
     height: fit-content;
     position: absolute;
     justify-content: center;
     align-items: center;
-    font-family: 'Pixelify Sans', sans-serif;
-    font-size: 90px;
-    text-align: center;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+    text-align: left;
     user-select: none;
     z-index: 100;
-    top: 60%;
-    left: 40%;
-
+    top: 44%;
+    left: 10%;
+    
 }
 .hoverHeader {
     z-index: 2;
