@@ -3,4 +3,5 @@
     display: grid;
     grid-template-columns:1fr 20fr;
     margin: -8px;
+    background-color:#d9d9d9 ;
 }

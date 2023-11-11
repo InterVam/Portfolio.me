@@ -1,11 +1,11 @@
 import './Style/landpageStyle.css'
 import Navbar from './Components/Navbar'
-import About from './Components/Welcome'
+import Container from './Components/Container'
 function Landing() {
   return (
 <div className='landPage'>
   <Navbar/>
-  <About/>
+  <Container/>
 
 </div>
   )

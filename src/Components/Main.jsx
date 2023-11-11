@@ -1,6 +1,6 @@
 import anime from 'animejs/lib/anime.es.js';
 import '../Style/welcomeStyle.css'
-import { useRef } from 'react';
+
 const BubbleText = ({name,type}) => {
     return (
       <a className={type}>
@@ -12,7 +12,7 @@ const BubbleText = ({name,type}) => {
       </a>
     );
   };
-function About() {
+function Main() {
     
     return (
         <div className="mainframe">
@@ -23,7 +23,7 @@ function About() {
               I have a passion for Web and Cross-platform Mobile Development using ReactJS as well as working with new Backend Technologies. I am kind of 
               also a big foodie so I'm your guy for any food recommendation. </span> 
             <DotGrid/>
-            <h1>ZEBYYY</h1>
+            
         </div>
          
     );
@@ -99,4 +99,4 @@ const DotGrid = () => {
       </div>
     );
   };
-export default About;
+export default Main;

@@ -1,0 +1,17 @@
+.backgroud{
+    background-color: #d9d9d9;
+    
+
+}
+.title{
+    color:#cca43b;
+    font-size: 60px;
+    font-family: 'Pixelify Sans', sans-serif;
+    padding-left: 7.5%;
+    padding-top: 3.5%;
+}
+.unis{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
