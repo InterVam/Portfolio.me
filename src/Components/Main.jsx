@@ -1,6 +1,7 @@
 import anime from 'animejs/lib/anime.es.js';
 import '../Style/welcomeStyle.css'
-
+import { useState } from 'react';
+import { useEffect } from 'react';
 const BubbleText = ({name,type}) => {
     return (
       <a className={type}>
@@ -13,24 +14,7 @@ const BubbleText = ({name,type}) => {
     );
   };
 function Main() {
-    
-    return (
-        <div className="mainframe">
-             <BubbleText name="Hello!
-              I am Youssef Fathi" type="header"/>
-             
-             <span className='infoText'>I am a Junior Software Engineer , currently working on my Master's Degree at University of Ottawa.
-              I have a passion for Web and Cross-platform Mobile Development using ReactJS as well as working with new Backend Technologies. I am kind of 
-              also a big foodie so I'm your guy for any food recommendation. </span> 
-            <DotGrid/>
-            
-        </div>
-         
-    );
-}
-const GRID_WIDTH = 40;
-const GRID_HEIGHT = 35;
-const DotGrid = () => {
+  const DotGrid = () => {
     const handleDotClick = (e) => {
       anime({
         targets: ".dot-point",
@@ -99,4 +83,34 @@ const DotGrid = () => {
       </div>
     );
   };
+  const GRID_HEIGHT = Math.ceil(window.innerHeight/31);
+  const [GRID_WIDTH, setGRID_WIDTH] =  useState()
+    useEffect(()=>{
+      if (window.innerWidth <= 500){
+        setGRID_WIDTH(8);
+       }
+       else{
+         setGRID_WIDTH(Math.ceil(window.innerWidth/48)) ;
+       }
+    },([]))
+    return (
+        <div className="mainframe">
+             <BubbleText name="Hello!
+              I am Youssef Fathi" type="header"/>
+             
+             <span className='infoText'>I am a Junior Software Engineer , currently working on my Master's Degree at University of Ottawa.
+              I have a passion for Web and Cross-platform Mobile Development using ReactJS as well as working with new Backend Technologies. I am kind of 
+              also a big foodie so I'm your guy for any food recommendation. </span> 
+            <DotGrid/>
+            
+        </div>
+         
+    );
+}
+
+
+
+
+
+
 export default Main;
