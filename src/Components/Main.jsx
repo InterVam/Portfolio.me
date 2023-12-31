@@ -83,6 +83,8 @@ function Main() {
       </div>
     );
   };
+
+
   const GRID_HEIGHT = Math.ceil(window.innerHeight/31);
   const [GRID_WIDTH, setGRID_WIDTH] =  useState()
     useEffect(()=>{
