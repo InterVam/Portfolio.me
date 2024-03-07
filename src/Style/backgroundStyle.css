@@ -3,6 +3,20 @@
     
 
 }
+@media (max-width: 768px) {
+    .unis{
+        flex-direction: column;
+        margin-left: 0vw !important ;
+    }
+    .title{
+        color:#cca43b;
+        font-size: 60px;
+        font-family: 'Pixelify Sans', sans-serif;
+        padding-left: 0 !important;
+        padding-top: 0 !important;
+        text-align: center;
+    }
+  }
 .title{
     color:#cca43b;
     font-size: 60px;
@@ -16,19 +30,3 @@
     margin-left: 5vw;
 }
 
-@media (max-width: 768px) {
-    .unis{
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        margin-left: 0vw;
-    }
-    .title{
-        color:#cca43b;
-        font-size: 60px;
-        font-family: 'Pixelify Sans', sans-serif;
-        padding-left: 0;
-        padding-top: 0;
-        text-align: center;
-    }
-  }

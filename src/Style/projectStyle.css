@@ -5,3 +5,11 @@
     padding-left: 7.5%;
     padding-top: 3.5%;
 }
+
+@media (max-width: 768px) {
+    .title{
+        padding-left: 0 !important;
+        padding-top: 0 !important;
+        text-align: center;
+    }
+  }

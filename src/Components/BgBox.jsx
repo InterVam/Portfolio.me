@@ -1,9 +1,9 @@
 import React from 'react';
 import '../Style/BgBoxstyle.css'; // Make sure to create a corresponding CSS file
 
-const RectangleWithImage = ({ imageUrl, title, content , loc}) => {
+const BackgroundBox = ({ imageUrl, title, content , loc}) => {
   return (
-    <div className="rectangle-container">
+    <div className="bg-rectangle-container">
       <div className="rectangle-content">
         <h2>{title}</h2>
         <p>{content}</p>
@@ -16,4 +16,4 @@ const RectangleWithImage = ({ imageUrl, title, content , loc}) => {
   );
 };
 
-export default RectangleWithImage;
+export default BackgroundBox;
