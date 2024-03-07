@@ -29,7 +29,9 @@ const Projects = () => {
         <div className='projects'>
             <div className='title'>Projects</div>
             <div style={{marginLeft:"5vw" , zIndex:"100"}}>
-            <Carousel responsive={responsive} containerClass="carousel-container"  removeArrowOnDeviceType={["tablet", "mobile","desktop","superLargeDesktop"]}  showDots={true}>
+            <Carousel responsive={responsive} containerClass="carousel-container"  removeArrowOnDeviceType={["tablet", "mobile","desktop","superLargeDesktop"]}  showDots={true}
+            itemClass='carousel-item-width-100% '
+            >
             <ProjectBox
                 tech= {"Numpy - Pandas - Matplotlib - Seaborn"}
                 title="Single Server Queue Simulation Using Blum Blum Shub Generator"

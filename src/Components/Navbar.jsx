@@ -26,10 +26,10 @@ function Navbar() {
          <Link to="Background" smooth={true} duration={500}><BubbleText name={"Background"}/></Link>
         </li>
         <li className='navItems'>  
-        <Link to="projects" smooth={true} duration={500}><BubbleText  name={"Projects"}/></Link>
+        <Link to="Projects" smooth={true} duration={500}><BubbleText  name={"Projects"}/></Link>
         </li >
         <li className='navItems' >
-        <Link to="contact" smooth={true} duration={500}><BubbleText name={"Contact"}/></Link>
+        <Link to="Contact" smooth={true} duration={500}><BubbleText name={"Contact"}/></Link>
         </li>
       </div>
     </nav> )

@@ -1,6 +1,6 @@
 import Background from './Background';
 import Main from './Main';
-
+import Contact from './Contact';
 import Projects from './Projects';
 
 function Container() {
@@ -14,8 +14,12 @@ function Container() {
                 <Background/>
             </div>
 
-            <div id="projects">
+            <div id="Projects">
                 <Projects/>
+            </div>
+
+            <div id="Contact">
+                <Contact/>
             </div>
         </div>
     );
