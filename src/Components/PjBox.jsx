@@ -20,7 +20,7 @@ const ProjectBox = ({ tech, title ,link, desc ,repo}) => {
       </div>
       <div style={{backgroundColor:"#000000" , justifyContent:"center" , }}>
         <a href={repo} target="_blank">
-        <img style={{width:"100px" , height:"100px" , padding:"10px", paddingTop:"25px"}} src={github} alt="Image" />
+        <img className="imgf" src={github} alt="Image" />
         </a>
       </div>
      </div>

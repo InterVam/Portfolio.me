@@ -36,6 +36,7 @@
     width: 100%; /* Adjust the width of the image container */
     overflow: hidden;
     right: 0;
+    height: 100%;
     top: 0;
     background-color: #b1b1b1;
     padding: 20px;
@@ -49,17 +50,18 @@
   
 
   
-  img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain ;
+  .imgf {
+    width: 100px;
+    height: 100px;
+    padding: 25px;
+    
   }
 
   
   @media (max-width: 768px) {
     .pj-rectangle-container {
     width: 90%; /* Adjust the width as needed */
-    height: fit-content;
+    height: 90%;
     flex-direction: column;
      
     }
@@ -68,5 +70,13 @@
         height: 100%;
         text-align: center;
         margin-left: 0vw;
+        padding: 15px;
+
+        }
+  .imgf {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+          
         }
   }
