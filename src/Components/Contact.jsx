@@ -1,5 +1,5 @@
 import github from '../assets/github_black.png';
-import linkedin from '../assets/linkedin.png';
+import linkedin from '../assets/LinkedIn.png';
 import email from '../assets/email.webp';
 
 const Contact = () => {
