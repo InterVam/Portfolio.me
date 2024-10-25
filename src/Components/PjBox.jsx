@@ -6,7 +6,7 @@ import github from '../assets/github.png'
 const ProjectBox = ({ tech, title ,link, desc ,repo}) => {
   return (
     <div className="pj-rectangle-container">
-      <div className="rectangle-content">
+      <div className="pj-rectangle-content">
         <h2>{title}</h2>  
         <p>{desc}</p>
         <a href={link} target="_blank" style={{color:'#cca43b'}}> {link?"Link":null}</a>        

@@ -13,3 +13,15 @@
         text-align: center;
     }
   }
+  .pjstyle{
+    margin-left: 4.5vw ;
+    z-index:100;
+  }
+
+  @media (max-width: 768px) {
+    .pjstyle{
+        margin-left: 1vw ;
+        z-index:100;
+        height: fit-content;
+      }
+    }

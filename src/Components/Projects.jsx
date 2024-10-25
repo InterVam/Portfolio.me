@@ -28,10 +28,16 @@ const Projects = () => {
     return (
         <div className='projects'>
             <div className='title'>Projects</div>
-            <div style={{marginLeft:"5vw" , zIndex:"100"}}>
+            <div className='pjstyle'>
             <Carousel responsive={responsive} containerClass="carousel-container"  removeArrowOnDeviceType={["tablet", "mobile","desktop","superLargeDesktop"]}  showDots={true}
-            itemClass='carousel-item-width-100% '
+            itemClass='carousel-item-width-100%'
             >
+              <ProjectBox
+                tech= {"Python - Pytorch - Librosa - ScikitLearn - TorchAudio - Seaborn - Numpy" }
+                title="Audio based Gender Detection"
+                desc="This project presents a cutting-edge Voice Gender Detection model .It's designed to accurately classify voice recordings into male or female categories. The core of this project lies in its robust utilization of audio processing techniques and advanced neural network architectures to achieve high accuracy levels."
+                repo={"https://github.com/InterVam/Audio-based-Gender-Detection"}
+            />
             <ProjectBox
                 tech= {"Numpy - Pandas - Matplotlib - Seaborn"}
                 title="Single Server Queue Simulation Using Blum Blum Shub Generator"
@@ -65,6 +71,7 @@ const Projects = () => {
                 desc="A Mobile Application made using Kotlin that offers user-friendly text encryption and decryption, including copy options for processed sentences."
                 repo={"https://github.com/InterVam/Sypher"}
             />
+          
             </Carousel>
 
 

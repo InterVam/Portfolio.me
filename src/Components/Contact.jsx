@@ -1,54 +1,44 @@
-import React, { useState } from 'react';
+import github from '../assets/github_black.png';
+import linkedin from '../assets/linkedin.png';
+import email from '../assets/email.webp';
 
 const Contact = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add your email sending logic here
-    console.log(`Name: ${name}`);
-    console.log(`Email: ${email}`);
-    console.log(`Message: ${message}`);
-    // Reset form fields
-    setName('');
-    setEmail('');
-    setMessage('');
+  const styles = {
+    picholder: {
+      margin: '20px',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 'fit-content', // Full page height
+      flexDirection: 'row',
+    },
+    pic: {
+      margin: '20px',
+    },
+    image: {
+      width: '70px', // You can adjust this size based on your requirements
+      height: '70px',
+      cursor: 'pointer',
+    },
   };
 
   return (
-    <div>
-      <h2>Contact</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="message">Message:</label>
-          <textarea
-            id="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          ></textarea>
-        </div>
-        <button type="submit">Send</button>
-      </form>
+    <div style={styles.picholder}>
+      <div style={styles.pic}>
+        <a href="https://www.linkedin.com/in/youssef-fathi-a443b318a/" target="_blank" rel="noopener noreferrer">
+          <img src={linkedin} alt="LinkedIn" style={styles.image} />
+        </a>
+      </div>
+      <div style={styles.pic}>
+        <a href="https://github.com/InterVam" target="_blank" rel="noopener noreferrer">
+          <img src={github} alt="GitHub" style={styles.image} />
+        </a>
+      </div>
+      <div style={styles.pic}>
+        <a href="mailto:yfathi2008@gmail.com" target="_blank" rel="noopener noreferrer">
+          <img src={email} alt="GitHub" style={styles.image} />
+        </a>
+      </div>
     </div>
   );
 };

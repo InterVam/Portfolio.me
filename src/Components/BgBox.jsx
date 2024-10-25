@@ -4,7 +4,7 @@ import '../Style/BgBoxstyle.css'; // Make sure to create a corresponding CSS fil
 const BackgroundBox = ({ imageUrl, title, content , loc}) => {
   return (
     <div className="bg-rectangle-container">
-      <div className="rectangle-content">
+      <div className="bg-rectangle-content">
         <h2>{title}</h2>
         <p>{content}</p>
         <p style={{textAlign:'right', color:'#cca43b'}}>{loc}</p>
