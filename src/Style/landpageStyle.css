@@ -3,14 +3,14 @@
     display: grid;
     grid-template-columns:1fr 20fr;
     margin: -8px;
-    background-color:#d9d9d9 ;
+    background-color:#0E1B26 ;
 }
 
 @media (max-width: 768px) {
     .landPage{
         height: 100vh;
         display: flex;
-        background-color:#d9d9d9 ;
+        background-color:#0E1B26 ;
         margin: -8px;
     }
   }
