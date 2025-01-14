@@ -4,18 +4,52 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import RandomBinaryBackground from '../assets/background_gen';
 import THREEDContainer from './THREEDContainer';
-import Computer from './Computer';
-const BubbleText = ({name,type}) => {
-    return (
-      <a className={type}>
-        {name.split("").map((child, idx) => (
-          <span className='hoverHeader' key={idx}>
-            {child}
-          </span>
-        ))}
-      </a>
-    );
-  };
+
+
+
+const BubbleText = ({ name, type }) => {
+  const colors = [
+    "rgba(165, 243, 252, 1)", // Cyan
+    "rgba(196, 181, 253, 1)", // Light Purple
+    "rgba(110, 231, 183, 1)", // Neon Green
+    "rgba(252, 252, 252, 1)", // Soft White
+  ];
+
+  const [letterColors, setLetterColors] = useState(
+    name.split("").map(() => colors[0])
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLetterColors((prevColors) =>
+        prevColors.map(() => {
+          const randomIndex = Math.floor(Math.random() * colors.length);
+          return colors[randomIndex]; // Randomly pick a new color
+        })
+      );
+    }, 50); // Adjust the speed of color cycling here
+
+    return () => clearInterval(interval);
+  }, [colors]);
+
+  return (
+    <a className={type}>
+      {name.split("").map((child, idx) => (
+        <span
+          className="hoverHeader"
+          key={idx}
+          style={{
+            color: letterColors[idx], // Apply the current random color
+            transition: "color 0.2s ease", // Smooth transition between colors
+          }}
+        >
+          {child}
+        </span>
+      ))}
+    </a>
+  );
+};
+
 
 function Main() {
     return (
@@ -25,7 +59,7 @@ function Main() {
          </div>
           
          <div className="content-layer">
-        <BubbleText name="YOUSSEF FATHI" type="header" />
+        <BubbleText name="Youssef Fathi" type="header" />
         <THREEDContainer  />
         <div className="infoText">
           A junior Software Engineer who loves crafting, creating, and learning new experiences for the digital world to savor

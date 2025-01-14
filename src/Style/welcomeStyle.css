@@ -28,10 +28,10 @@
     justify-content: center;
     align-items: center;
     font-family: 'Red Hat Text', sans-serif;
-    font-size: 15vh;
+    font-size: 20vh;
     text-align: left;
     user-select: none;
-    z-index: 100;
+    z-index: -1;
     top: 10%;
     left: 5%;
     white-space: pre-line;
@@ -40,59 +40,24 @@
 }
 
 
-.hoverHeader {
-  z-index: 2;
-  color: white;
-  transition: 
-      0.35s font-weight,
-      0.35s color,
-      0.35s text-shadow;
-  font-weight: 600;
-}
-
-/* Hover Effect */
-.hoverHeader:hover {
+.hoverHeader.active {
   font-weight: 900;
   color: #6EE7B7; /* Neon green */
   text-shadow: 
-      0 0 5px #6EE7B7, 
-      0 0 10px #6EE7B7, 
-      0 0 15px #6EE7B7, 
-      0 0 20px rgba(110, 231, 183, 0.8);
+    0 0 5px #6EE7B7,
+    0 0 10px #6EE7B7,
+    0 0 15px #6EE7B7,
+    0 0 20px rgba(110, 231, 183, 0.8);
 }
 
-/* Glow Effect on Adjacent Letters - To the Right */
-.hoverHeader:hover + .hoverHeader {
-  font-weight: 700;
-  color: #A5F3FC; /* Soft cyan */
+.hoverHeader {
+  font-weight: 900;
   text-shadow: 
-      0 0 3px #A5F3FC, 
-      0 0 8px rgba(165, 243, 252, 0.7);
-}
-
-.hoverHeader:hover + .hoverHeader + .hoverHeader {
-  font-weight: 700;
-  color: #C4B5FD; /* Soft purple */
-  text-shadow: 
-      0 0 2px #C4B5FD, 
-      0 0 6px rgba(196, 181, 253, 0.6);
-}
-
-/* Glow Effect on Adjacent Letters - To the Left */
-.hoverHeader:has(+ .hoverHeader:hover) {
-  font-weight: 700;
-  color: #A5F3FC; /* Soft cyan */
-  text-shadow: 
-      0 0 3px #A5F3FC, 
-      0 0 8px rgba(165, 243, 252, 0.7);
-}
-
-.hoverHeader:has(+ .hoverHeader + .hoverHeader:hover) {
-  font-weight: 700;
-  color: #C4B5FD; /* Soft purple */
-  text-shadow: 
-      0 0 2px #C4B5FD, 
-      0 0 6px rgba(196, 181, 253, 0.6);
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    0 0 20px rgba(110, 231, 183, 0.8); /* Adjust as desired */
+  transition: text-shadow 0.5s ease, color 0.5s ease;
 }
 .infoText {
   list-style-type: none;
