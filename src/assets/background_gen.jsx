@@ -14,7 +14,7 @@ const RetroBinaryBackground = () => {
 
       // Dynamically scale font size for responsiveness
       const fontSize = Math.max(window.innerWidth / 100, 30);
-      const cols = Math.floor(canvas.width / fontSize);
+      const cols = Math.floor(canvas.width / fontSize) + 2;
       const rows = Math.floor(canvas.height / fontSize);
 
       // Predefined color palette for the numbers
