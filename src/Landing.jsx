@@ -4,7 +4,7 @@ import Container from './Components/Container'
 function Landing() {
   return (
 <div className='landPage'>
-  <Navbar/>
+  {/* <Navbar/> */}
   <Container/>
 
 </div>
