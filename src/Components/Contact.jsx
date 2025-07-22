@@ -22,11 +22,7 @@ const Contact = () => {
           </div>
           <div className="contact-item">
             <span className="contact-label">Location:</span>
-            <span className="contact-text">Alexandria, Egypt</span>
-          </div>
-          <div className="contact-item">
-            <span className="contact-label">Phone:</span>
-            <span className="contact-text">01229901479</span>
+            <span className="contact-text">Ontario, Canada</span>
           </div>
         </div>
 
