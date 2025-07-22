@@ -1,60 +1,41 @@
 
-body {
-  background: #111; /* Dark background for the neon effect */
-}
-
 .hidden {
   opacity: 0;
 }
 
 .console-container {
-  font-family: 'Red Hat Text', sans-serif;
-  font-size: 3.5em;
-  text-align: left;
-  height: 200px;
-  width: 600px;
-  display: block;
-  position: absolute;
-  color: white;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin-left:5% ;
-  margin-top: 25%;
-  overflow: hidden; /* Prevent text overflow */
-  font-weight: 900;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 4vh;
+    text-align: center;
+    display: block;
+    color: #e0e0e0;
+    margin-top: 15px;
+    font-weight: 500;
 }
 
 .console-underscore {
-  display: inline-block;
-  position: relative;
-  top: -0.14em;
-  left: 10px;
+    display: inline-block;
+    position: relative;
+    top: -0.1em;
+    left: 5px;
+    color: #cca43b;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
 }
 
 #text {
-  display: inline-block;
-  text-shadow: 
-    0 0 10px rgba(165, 243, 252, 0.8),   /* Outer glow */
-    0 0 20px rgba(165, 243, 252, 0.6),   /* Extended blend */
-    0 0 30px rgba(165, 243, 252, 0.4);   /* Smooth transition */
-  color: rgba(165, 243, 252, 1); /* Base neon color */
-  animation: blendNeon 2s ease-in-out infinite alternate; /* Smooth animation */
+    display: inline-block;
+    color: #cca43b;
+    text-shadow: 0 0 10px rgba(204, 164, 59, 0.4);
 }
 
-/* Smooth pulsing glow animation */
-@keyframes blendNeon {
-  0% {
-    text-shadow: 
-      0 0 5px rgba(165, 243, 252, 0.8),
-      0 0 10px rgba(165, 243, 252, 0.6),
-      0 0 15px rgba(165, 243, 252, 0.4);
-  }
-  100% {
-    text-shadow: 
-      0 0 20px rgba(165, 243, 252, 1),
-      0 0 25px rgba(165, 243, 252, 0.8),
-      0 0 30px rgba(165, 243, 252, 0.6);
-  }
+@media (max-width: 768px) {
+    .console-container {
+        font-size: 3.5vh;
+        margin-top: 10px;
+    }
 }

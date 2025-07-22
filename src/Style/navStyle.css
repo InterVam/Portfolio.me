@@ -1,65 +1,92 @@
-.navBar{
+.navBar {
     display: flex;
     flex-direction: column;
-    background-color: #d9d9d9;
-    align-items: left;
-    height: 100%;
+    background: rgba(26, 26, 26, 0.9);
+    backdrop-filter: blur(10px);
+    align-items: center;
+    height: 100vh;
     position: fixed;
-    z-index: 50;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 70px;
+    border-right: 1px solid rgba(204, 164, 59, 0.2);
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
-.navItems{
+
+.navbarList {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-inline-start: 0px;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.navItems {
     list-style-type: none;
-    width: fit-content; 
-    height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
     writing-mode: vertical-lr;
     text-orientation: sideways-right;
     font-family: 'Pixelify Sans', sans-serif;
-    font-size: 30px;
+    font-size: 22px;
     text-align: center;
     user-select: none;
+    padding: 15px 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.navbarList{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    padding-inline-start: 0px;
-    justify-content: space-evenly;
-    height : 100vh;
-    margin: 5px;
+.navItems:hover {
+    background: rgba(204, 164, 59, 0.1);
 }
 
 .hoverText {
     color: #cca43b;
-    transition:
-      0.35s font-weight,
-      0.35s color;
-  }
-  
-  .hoverText:hover {
-    font-weight: 900;
-    color: #a9a9a9;
-  }
-  
-  /* To the right */
-  .hoverText:hover + .hoverText {
-    font-weight: 500;
-    color: rgb(68, 68, 68);
-  }
-  
-  .hoverText:hover + .hoverText + .hoverText {
-    font-weight: 300;
-  }
-  
-  /* To the left */
-  .hoverText:has(+ .hoverText:hover) {
-    font-weight: 500;
-    color: rgb(68, 68, 68);
-  }
-  
-  .hoverText:has(+ .hoverText + .hoverText:hover) {
-    font-weight: 300;
-  }
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.navItems:hover .hoverText {
+    color: #d4b347;
+    font-weight: 700;
+}
+
+/* Smooth hover effects for adjacent items */
+.hoverText:hover + .hoverText,
+.hoverText:hover + .hoverText + .hoverText,
+.hoverText:has(+ .hoverText:hover),
+.hoverText:has(+ .hoverText + .hoverText:hover) {
+    /* Remove these effects */
+    color: inherit;
+    font-weight: inherit;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .navBar {
+        width: 50px;
+    }
+    
+    .navItems {
+        font-size: 18px;
+        padding: 12px 6px;
+    }
+    
+    .navbarList {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    .navBar {
+        display: none;
+    }
+}

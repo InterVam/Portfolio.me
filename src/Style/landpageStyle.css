@@ -1,16 +1,12 @@
-.landPage{
-    height: 100vh;
-    display: grid;
-    grid-template-columns:1fr 20fr;
-    margin: -8px;
-    background-color:#0E1B26 ;
+.landPage {
+    width: 100%;
+    height: 100%;
 }
 
 @media (max-width: 768px) {
-    .landPage{
+    .landPage {
         height: 100vh;
         display: flex;
-        background-color:#0E1B26 ;
         margin: -8px;
     }
-  }
+}

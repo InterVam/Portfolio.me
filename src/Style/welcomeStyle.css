@@ -1,140 +1,102 @@
 
-.mainframe{
-    background: radial-gradient(circle, #0E1B26 0%, #1A1F36 100%);
+.mainframe {
+    background: transparent;
     width: 100%;
-    height: 100vh;
-  }
-  .background-layer {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+/* Background Layer: Contains the animated binary background */
+.background-layer {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0; /* Ensure it's behind everything else */
-  }
-  
-  /* Foreground content */
-  .content-layer {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1; /* Place it above the background */
-  }
-.header{
-    list-style-type: none;
-    width: 1vw; 
-    height: fit-content;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Red Hat Text', sans-serif;
-    font-size: 20vh;
-    text-align: left;
-    user-select: none;
-    z-index: -1;
-    top: 10%;
-    left: 5%;
-    white-space: pre-line;
-    font-weight: 900;
-    line-height: 0.9; /* Adjust this value as needed */
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.5;
 }
 
+/* Foreground Layer: Contains the main content */
+.content-layer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 1px solid rgba(204, 164, 59, 0.1);
+}
 
-.hoverHeader.active {
-  font-weight: 900;
-  color: #6EE7B7; /* Neon green */
-  text-shadow: 
-    0 0 5px #6EE7B7,
-    0 0 10px #6EE7B7,
-    0 0 15px #6EE7B7,
-    0 0 20px rgba(110, 231, 183, 0.8);
+.header {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 10vh;
+    font-weight: 700;
+    color: #cca43b;
+    line-height: 1.1;
+    margin: 0 0 10px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
 }
 
 .hoverHeader {
-  font-weight: 900;
-  text-shadow: 
-    0 0 5px currentColor,
-    0 0 10px currentColor,
-    0 0 15px currentColor,
-    0 0 20px rgba(110, 231, 183, 0.8); /* Adjust as desired */
-  transition: text-shadow 0.5s ease, color 0.5s ease;
+    text-shadow:
+        0 0 5px currentColor,
+        0 0 10px currentColor,
+        0 0 15px currentColor,
+        0 0 20px rgba(204, 164, 59, 0.8);
+    transition: text-shadow 0.5s ease, color 0.5s ease;
 }
+
 .infoText {
-  list-style-type: none;
-  width: 30vw;
-  height: fit-content;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  font-family: 'Red Hat Text', monospace;
-  font-size: 4.5vh;
-  font-weight: 600;
-  user-select: none;
-  z-index: 100; /* Ensure it stays above the .text-container */
-  top: 65%;
-  left: 68%;
-
-  /* Gradient Text */
-  background: linear-gradient(90deg, white, white, white);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  /* Retro Neon Glow Effect */
-  text-shadow: 0 0 5px rgba(110, 231, 183, 0.8),
-              0 0 10px rgba(165, 243, 252, 0.6),
-              0 0 20px rgba(196, 181, 253, 0.5),
-              0 0 30px rgba(196, 181, 253, 0.4);
-
-  /* Glow Animation for Retro Vibes */
-  animation: neon-pulse 3s infinite;
+    width: 60vw;
+    max-width: 800px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5vh;
+    font-weight: 400;
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-top: 20px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
-  @media (max-width: 768px) {
-    .header{
-      list-style-type: none;
-      width: fit-content; 
-      height: fit-content;
-      position: absolute;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Red Hat Text', monospace;
-      font-size: 7vh;
-      text-align: center;
-      user-select: none;
-      z-index: 100;
-      top: 10%;
-      left: 0; 
-      right: 0; 
-      margin-left: auto; 
-      margin-right: auto; 
-      white-space: pre-line;
-      font-weight: 900;
-
-  }
-  .infoText{
-   
-    list-style-type: none;
-    color: white;
-    width: 90vw; 
-    height: fit-content;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Red Hat Text', monospace;
-    font-size: 3vh;
-    text-align: center;
-    user-select: none;
-    z-index: 100;
-    top: 75%;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
-    font-weight: 700;
+/* Keyframe animation for the retro neon glow effect */
+@keyframes neon-pulse {
+    0%, 100% {
+        text-shadow:
+            0 0 5px rgba(204, 164, 59, 0.8),
+            0 0 10px rgba(204, 164, 59, 0.6),
+            0 0 20px rgba(204, 164, 59, 0.5),
+            0 0 30px rgba(204, 164, 59, 0.4);
+    }
+    50% {
+        text-shadow:
+            0 0 10px rgba(204, 164, 59, 1),
+            0 0 20px rgba(204, 164, 59, 0.8),
+            0 0 30px rgba(204, 164, 59, 0.7),
+            0 0 40px rgba(204, 164, 59, 0.6);
+    }
 }
 
+@media (max-width: 768px) {
+    .header {
+        font-size: 8vh;
+    }
 
-  }
+    .infoText {
+        font-size: 2.2vh;
+        width: 85vw;
+    }
+}
 
 

@@ -1,0 +1,137 @@
+.low-poly-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    pointer-events: none;
+}
+
+.low-poly-svg {
+    width: 100%;
+    height: 250vh;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Subtle gray variations for most polygons */
+.poly-gray-0 {
+    fill: #1e1e1e;
+    stroke: #242424;
+    stroke-width: 0.3;
+    opacity: 0.4;
+    transition: all 0.3s ease;
+}
+
+.poly-gray-1 {
+    fill: #212121;
+    stroke: #272727;
+    stroke-width: 0.3;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
+
+.poly-gray-2 {
+    fill: #242424;
+    stroke: #2a2a2a;
+    stroke-width: 0.3;
+    opacity: 0.35;
+    transition: all 0.3s ease;
+}
+
+.poly-gray-3 {
+    fill: #1c1c1c;
+    stroke: #222;
+    stroke-width: 0.3;
+    opacity: 0.25;
+    transition: all 0.3s ease;
+}
+
+/* Subtle gold highlights */
+.poly-gold {
+    fill: rgba(204, 164, 59, 0.03);
+    stroke: rgba(204, 164, 59, 0.4);
+    stroke-width: 0.5;
+    opacity: 0.6;
+    filter: drop-shadow(0 0 1px rgba(204, 164, 59, 0.2));
+}
+
+/* Gentle pulsing animation for gold polygons */
+@keyframes subtleGoldPulse {
+    0% {
+        opacity: 0.3;
+        stroke-width: 0.3;
+        fill: rgba(204, 164, 59, 0.01);
+    }
+    50% {
+        opacity: 0.6;
+        stroke-width: 0.5;
+        fill: rgba(204, 164, 59, 0.05);
+    }
+    100% {
+        opacity: 0.3;
+        stroke-width: 0.3;
+        fill: rgba(204, 164, 59, 0.01);
+    }
+}
+
+.poly-gold {
+    animation: subtleGoldPulse 8s infinite ease-in-out;
+    animation-delay: calc(var(--animation-delay, 0) * 1s);
+}
+
+/* Subtle floating animation for some gray polygons */
+@keyframes subtleFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(2px);
+    }
+}
+
+.poly-gray-0:nth-child(7n) {
+    animation: subtleFloat 15s infinite ease-in-out;
+}
+
+.poly-gray-1:nth-child(11n) {
+    animation: subtleFloat 20s infinite ease-in-out;
+    animation-delay: 5s;
+}
+
+.poly-gray-2:nth-child(13n) {
+    animation: subtleFloat 18s infinite ease-in-out;
+    animation-delay: 10s;
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 768px) {
+    .low-poly-svg {
+        height: 200vh;
+    }
+    
+    .poly-gold {
+        filter: none;
+        animation-duration: 12s;
+    }
+    
+    .poly-gray-0:nth-child(7n),
+    .poly-gray-1:nth-child(11n),
+    .poly-gray-2:nth-child(13n) {
+        animation: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .poly-gold,
+    .poly-gray-0:nth-child(7n),
+    .poly-gray-1:nth-child(11n),
+    .poly-gray-2:nth-child(13n) {
+        animation: none;
+    }
+} 

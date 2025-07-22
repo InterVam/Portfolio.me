@@ -1,33 +1,26 @@
-import Background from './Background';
 import Main from './Main';
 import Contact from './Contact';
 import Projects from './Projects';
+import Experience from './Experience';
+import '../Style/containerStyle.css';
 import { useRef } from 'react';
 
 function Container() {
     return (
-        <div
-            style={{
-                display: 'flex',
-                background: '#0E1B26',
-                flexDirection: 'column',
-                width: '100vw',
-            }}
-        >
-            
-            <div id="about">
+        <div className="main-container">
+            <div id="about" name="about" className="section">
                 <Main/>
             </div>
 
-            <div id="Background">
-                <Background/>
+            <div id="experience" name="experience" className="section">
+                <Experience/>
             </div>
 
-            <div id="Projects">
+            <div id="projects" name="projects" className="section">
                 <Projects/>
             </div>
 
-            <div id="Contact">
+            <div id="contact" name="contact" className="section">
                 <Contact/>
             </div>
         </div>

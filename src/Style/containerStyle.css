@@ -1,0 +1,100 @@
+/* Global background for the entire page */
+body, html {
+    margin: 0;
+    padding: 0;
+    background: #1a1a1a;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - 70px);
+    margin-left: 70px;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+/* Section styling */
+.section {
+    min-height: 100vh;
+    padding: 50px 0;
+    margin: 0;
+    position: relative;
+    background: transparent !important;
+    scroll-margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Staggered animations for sections */
+#about {
+    animation-delay: 2s; /* Start after loading animation */
+}
+
+#experience {
+    animation-delay: 2.1s;
+}
+
+#projects {
+    animation-delay: 2.2s;
+}
+
+#contact {
+    animation-delay: 2.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensure proper spacing between sections */
+.section + .section {
+    padding-top: 30px;
+}
+
+/* Remove individual section backgrounds to use the unified background */
+.main-container > div {
+    background: transparent !important;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        width: calc(100vw - 50px);
+        margin-left: 50px;
+    }
+    
+    .section {
+        padding: 30px 0;
+        scroll-margin-top: 0;
+        min-height: 100vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .main-container {
+        width: 100vw;
+        margin-left: 0;
+    }
+    
+    .section {
+        scroll-margin-top: 0;
+        min-height: 100vh;
+    }
+} 
