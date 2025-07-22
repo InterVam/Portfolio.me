@@ -1,9 +1,12 @@
 .experience-container {
-    padding: 40px 20px 60px;
+    padding: 60px 20px; /* Consistent padding */
     font-family: 'Roboto', sans-serif;
     background: transparent;
     position: relative;
     z-index: 1;
+    width: 100%;
+    max-width: 1600px; /* Improve readability on large screens */
+    margin: 0 auto;
 }
 
 .experience-title {
@@ -62,8 +65,8 @@
     position: absolute;
     left: 25px;
     transform: translateX(-50%);
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: #2d2d2d;
     border: 3px solid #cca43b;
@@ -72,6 +75,14 @@
     justify-content: center;
     box-shadow: 0 0 15px rgba(204, 164, 59, 0.3);
     z-index: 1;
+    overflow: hidden; /* Ensure images don't overflow the circle */
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-icon {
+    transform: translateX(-50%) scale(1.1);
+    border-color: #d4b347;
+    box-shadow: 0 0 20px rgba(204, 164, 59, 0.5);
 }
 
 .timeline-icon img {
@@ -79,6 +90,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+    object-position: center; /* Center the image */
 }
 
 .default-icon {
@@ -89,7 +101,7 @@
 }
 
 .timeline-content {
-    margin-left: 60px;
+    margin-left: 70px;
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
     border-radius: 15px;
@@ -147,6 +159,35 @@
     font-weight: bold;
 }
 
+/* Logo-specific adjustments */
+.logo-university-of-ottawa {
+    object-position: center;
+    transform: scale(1.1);
+}
+
+.logo-university-of-northampton {
+    object-position: center;
+    transform: scale(1.15);
+}
+
+.logo-arab-academy-for-science-and-technology {
+    object-position: center;
+    transform: scale(1.2);
+}
+
+.logo-aws-certified-cloud-practitioner {
+    object-position: center;
+    background-color: white;
+    padding: 3px;
+}
+
+.logo-front-end-development {
+    object-position: center;
+    transform: scale(0.9);
+    background-color: white;
+    padding: 3px;
+}
+
 @media (max-width: 1200px) {
     .timelines-wrapper {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -157,10 +198,95 @@
 @media (max-width: 768px) {
     .timelines-wrapper {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 40px;
+        width: 100%;
+        max-width: 500px; /* Constrain width on tablets for better focus */
     }
 
     .experience-container {
-        padding: 60px 20px;
+        padding: 30px 15px 50px;
+    }
+    
+    .experience-title {
+        font-size: 42px;
+        margin-bottom: 40px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .experience-container {
+        padding: 40px 15px; /* Adjust padding */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .experience-title {
+        font-size: 36px;
+        margin-bottom: 30px;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .timelines-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .timeline-section {
+        width: 100%;
+        max-width: 100%; /* Allow it to fill the constrained wrapper */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .experience-timeline {
+        width: 100%;
+        padding-left: 10px;
+    }
+    
+    .timeline-icon {
+        width: 40px;
+        height: 40px;
+        left: 20px;
+    }
+    
+    .experience-timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-content {
+        margin-left: 55px; /* Tweak margin */
+        padding: 15px;
+        width: calc(100% - 55px); /* Adjust width based on new margin */
+    }
+    
+    .timeline-title {
+        font-size: 18px;
+    }
+    
+    .timeline-subtitle {
+        font-size: 14px;
+    }
+    
+    .timeline-description {
+        font-size: 13px;
     }
 } 

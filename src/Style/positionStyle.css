@@ -39,3 +39,19 @@
         margin-top: 10px;
     }
 }
+
+@media (max-width: 500px) {
+    .console-container {
+        font-size: 3vh;
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #text {
+        text-align: center;
+    }
+}

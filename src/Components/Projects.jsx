@@ -65,16 +65,16 @@ const Projects = () => {
             partialVisibilityGutter: 40
         },
         tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 1,
-            slidesToSlide: 1,
-            partialVisibilityGutter: 30
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
+            breakpoint: { max: 1024, min: 481 },
             items: 1,
             slidesToSlide: 1,
             partialVisibilityGutter: 20
+        },
+        mobile: {
+            breakpoint: { max: 480, min: 0 },
+            items: 1,
+            slidesToSlide: 1,
+            partialVisibilityGutter: 15
         }
     };
 
@@ -113,6 +113,9 @@ const Projects = () => {
                     renderButtonGroupOutside={false}
                     renderDotsOutside={false}
                     removeArrowOnDeviceType={[]}
+                    additionalTransfrom={0}
+                    beforeChange={() => {}}
+                    afterChange={() => {}}
                 >
                     {projectData.map((project, index) => (
                         <ProjectBox

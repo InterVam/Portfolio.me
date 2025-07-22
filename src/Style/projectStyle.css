@@ -1,5 +1,5 @@
 .projects-container {
-    padding: 40px 0 60px;
+    padding: 60px 20px;
     background: transparent;
     display: flex;
     flex-direction: column;
@@ -8,7 +8,8 @@
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 100%;
+    max-width: 1400px; /* Constrain width */
+    margin: 0 auto;
 }
 
 .title {
@@ -43,18 +44,21 @@
     padding: 0 10px;
     height: 100%;
     display: flex;
-    align-items: stretch;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Fix for react-multi-carousel height issues */
 .react-multi-carousel-item {
     height: auto !important;
+    display: flex;
+    justify-content: center;
 }
 
 .react-multi-carousel-track {
     padding: 10px 0;
     display: flex;
-    align-items: stretch;
+    align-items: center;
 }
 
 /* Bar-style custom dots */
@@ -119,7 +123,7 @@
 
 @media (max-width: 768px) {
     .projects-container {
-        padding: 30px 0 50px;
+        padding: 50px 15px;
     }
     
     .title {
@@ -128,7 +132,7 @@
     }
 
     .carousel-wrapper {
-        width: 98%;
+        width: 100%; /* Let the container control the width */
     }
 
     .carousel-container {
@@ -137,7 +141,14 @@
     }
 
     .carousel-item {
-        padding: 0 8px;
+        padding: 0 10px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .react-multi-carousel-item {
+        display: flex;
+        justify-content: center;
     }
     
     .react-multiple-carousel__arrow {
@@ -157,5 +168,67 @@
     
     .custom-dot.active {
         width: 38px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-container {
+        padding: 40px 10px;
+    }
+    
+    .title {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .carousel-wrapper {
+        width: 95%;
+    }
+    
+    .carousel-container {
+        padding: 10px 5px 20px;
+    }
+    
+    .carousel-item {
+        padding: 0 5px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .react-multi-carousel-item {
+        display: flex !important;
+        justify-content: center !important;
+    }
+    
+    .react-multi-carousel-track {
+        display: flex;
+        align-items: center;
+    }
+    
+    .react-multiple-carousel__arrow {
+        min-width: 28px !important;
+        min-height: 28px !important;
+    }
+    
+    .react-multiple-carousel__arrow--left {
+        left: 2px !important;
+    }
+    
+    .react-multiple-carousel__arrow--right {
+        right: 2px !important;
+    }
+    
+    .custom-dot-list {
+        gap: 6px;
+        margin-top: 15px;
+    }
+    
+    .custom-dot {
+        width: 24px;
+        height: 3px;
+    }
+    
+    .custom-dot.active {
+        width: 32px;
     }
 }

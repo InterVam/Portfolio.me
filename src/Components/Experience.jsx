@@ -79,7 +79,13 @@ const TimelineSection = ({ title, data }) => (
             {data.map((item, index) => (
                 <div key={index} className="timeline-item">
                     <div className="timeline-icon">
-                        {item.logo && <img src={item.logo} alt={`${item.title} logo`} />}
+                        {item.logo && (
+                            <img 
+                                src={item.logo} 
+                                alt={`${item.title} logo`} 
+                                className={`logo-${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                            />
+                        )}
                         {!item.logo && <div className="default-icon"></div>}
                     </div>
                     <div className="timeline-content">
