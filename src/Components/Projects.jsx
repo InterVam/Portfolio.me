@@ -8,12 +8,14 @@ const projectData = [
     {
         title: "Dragify Demo Agent",
         tech: "Python, FastAPI, React, Next.js, Docker, Docker Compose, PostgreSQL",
-        desc: "• Developed agentic LLM workflows to automate structured document analysis and criteria evaluation.\n• Built RAG pipelines integrating vector search and generative models for enhanced information retrieval.\n• Designed data enrichment flows combining web scraping and LLM-driven entity profiling.\n• Contributed to the architecture of scalable, modular AI tools used across multiple client-facing systems.\n• Participated in technical demos, internal handovers, and partner integration evaluations.\n• Researched automation strategies for security operations and enterprise document intelligence."
+        desc: "• Developed agentic LLM workflows to automate structured document analysis and criteria evaluation.\n• Built RAG pipelines integrating vector search and generative models for enhanced information retrieval.\n• Designed data enrichment flows combining web scraping and LLM-driven entity profiling.\n• Contributed to the architecture of scalable, modular AI tools used across multiple client-facing systems.\n• Participated in technical demos, internal handovers, and partner integration evaluations.\n• Researched automation strategies for security operations and enterprise document intelligence.",
+        repo: "https://github.com/InterVam/dragify-demo-agent"
     },
     {
         title: "Real-Time Streaming Sales Analytics Pipeline",
         tech: "Apache Kafka, PySpark, Docker, Jupyter Notebook, Airflow, Spark Standalone Cluster, Pandas, Parquet",
-        desc: "• Designed and implemented a real-time streaming data pipeline to process simulated e-commerce sales transactions\n• Deployed Kafka and Zookeeper via Docker for scalable streaming data ingestion and topic management\n• Developed PySpark Structured Streaming jobs to consume and aggregate transactional data by product category using window functions and watermarking\n• Integrated Apache Airflow to orchestrate Kafka simulation producers, Spark streaming jobs, and daily validation tasks"
+        desc: "• Designed and implemented a real-time streaming data pipeline to process simulated e-commerce sales transactions\n• Deployed Kafka and Zookeeper via Docker for scalable streaming data ingestion and topic management\n• Developed PySpark Structured Streaming jobs to consume and aggregate transactional data by product category using window functions and watermarking\n• Integrated Apache Airflow to orchestrate Kafka simulation producers, Spark streaming jobs, and daily validation tasks",
+        repo: "https://github.com/InterVam/Real-Time-and-Batch-Analytics-Pipeline-for-E-Commerce-Sales"
     },
     {
         title: "Audio based Gender Detection",
