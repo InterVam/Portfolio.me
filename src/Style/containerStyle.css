@@ -108,7 +108,7 @@ body, html {
     .main-container {
         width: 100%; /* Full width on mobile */
         margin-left: 0;
-        padding-top: 20px;
+        padding-top: 30px; /* Increased from 20px */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -116,7 +116,7 @@ body, html {
     
     .section {
         scroll-margin-top: 0;
-        padding: 40px 15px; /* Consistent mobile padding */
+        padding: 50px 20px; /* Increased vertical padding and horizontal padding */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -127,12 +127,13 @@ body, html {
     }
     
     .section + .section {
-        padding-top: 30px;
+        padding-top: 40px; /* Increased from 30px */
+        margin-top: 20px; /* Added margin for better separation */
     }
     
     #about {
         min-height: 100vh;
-        padding-top: 40px;
+        padding-top: 50px; /* Increased from 40px */
         justify-content: center;
     }
 } 
