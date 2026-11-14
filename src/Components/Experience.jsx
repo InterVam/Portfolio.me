@@ -1,4 +1,3 @@
-import React from 'react';
 import '../Style/experienceStyle.css';
 import uon from '../assets/UON.jpg';
 import iti from '../assets/iti.png';
@@ -8,24 +7,35 @@ import uottawa from '../assets/uottawa.png';
 
 const workData = [
     {
-        title: 'Lawyer Conveyance Systems',
+        title: 'Amana',
         subtitle: 'Software Engineer',
-        duration: 'Present',
+        duration: 'Mar 2026 — Present · Dubai, UAE',
         description: [
-            'Built production-grade ELT pipelines and Delta Lake architecture with PySpark and Databricks.',
-            'Developed high-throughput backend services (5K+ RPS) with NestJS, PostgreSQL, and TypeORM.',
-            'Delivered near real-time BI dashboards and containerized deployments via Docker/Kubernetes.'
+            'Re-architected financial news ingestion pipelines, reducing P95 API latency by more than 90% from 300ms to 25ms.',
+            'Engineered an OAuth2-secured Model Context Protocol server for real-time trading asset and instrument lookups.',
+            'Built validation safeguards and fuzzy entity resolution to eliminate incomplete feeds and LLM hallucinations.'
         ],
         logo: null
     },
     {
-        title: 'Tomorrow Smile',
-        subtitle: 'Machine Learning Research Engineer Intern',
-        duration: '2023',
+        title: 'Lawyer Conveyance Systems',
+        subtitle: 'Software Engineer',
+        duration: 'Jan 2025 — Feb 2026 · Ottawa, Canada',
         description: [
-            'Built deep learning pipelines for dental 3D scans using U-Net, FlyByCNN, and MONAI.',
-            'Integrated VTK and CUDA for 3D segmentation, visualization, and scalar generation.',
-            'Deployed orthodontic analysis tools transforming research into clinical applications.'
+            'Designed scalable NestJS and PostgreSQL REST APIs handling more than 5,000 requests per second.',
+            'Built PySpark and Databricks ELT pipelines processing more than 1 million records daily with Delta Lake.',
+            'Delivered BI APIs powering real-time dashboards and cut manual coordination overhead by 40%.'
+        ],
+        logo: null
+    },
+    {
+        title: 'Flipped Toys',
+        subtitle: 'Software Engineer',
+        duration: 'Sep 2024 — Dec 2024 · Ottawa, Canada',
+        description: [
+            'Engineered a secure FastAPI backend with JWT authentication, parental controls, and device-based logins.',
+            'Designed the Firebase Firestore schema for users, devices, games, and access control.',
+            'Containerized and deployed the platform with Docker on Azure Container Apps.'
         ],
         logo: null
     }
@@ -107,7 +117,11 @@ const TimelineSection = ({ title, data }) => (
 const Experience = () => {
     return (
         <div className="experience-container">
-            <h1 className="experience-title">Experience & Education</h1>
+            <div className="section-heading">
+                <p className="eyebrow"><span className="eyebrow-mark" /> The timeline</p>
+                <h1 className="experience-title">Built from <em>curiosity.</em></h1>
+                <p className="section-lede">A systems-minded engineer with a foundation in computer engineering and a focus on applied AI.</p>
+            </div>
             <div className="timelines-wrapper">
                 <TimelineSection title="Work Experience" data={workData} />
                 <TimelineSection title="Education" data={educationData} />

@@ -1,24 +1,24 @@
-import React from 'react';
 import '../Style/welcomeStyle.css';
-import Position from './position';
-
-const colors = [
-    "#cca43b", // Gold
-    "#d4b347", // Light Gold
-    "#a78531", // Dark Gold
-];
 
 const Main = () => {
     return (
-        <div className="mainframe">
-            <div className="content-layer">
-                <h1 className="header">Youssef Fathi</h1>
-                <Position words={["Software Engineer", "AI Engineer", "Full-Stack Developer"]} colors={colors} />
+        <div className="hero">
+            <div className="hero-copy">
+                <p className="eyebrow"><span className="eyebrow-mark" /> Portfolio / 2026</p>
+                <h1 className="header">Youssef <em>Fathi</em></h1>
+                <p className="hero-role">Software Engineer <span>+</span> AI Engineer</p>
                 <p className="infoText">
-                    A passionate software engineer specializing in AI and full-stack development. 
-                    I thrive on building innovative solutions and crafting seamless digital experiences. 
-                    My goal is to leverage technology to solve complex problems and create meaningful impact.
+                    I build reliable data platforms, intelligent products, and full-stack experiences
+                    that turn complex ideas into useful tools.
                 </p>
+                <div className="hero-actions">
+                    <a className="button button-primary" href="#projects">View selected work <span>↗</span></a>
+                    <a className="button button-secondary" href="/Youssef-Fathi-Resume.pdf" download>Download résumé <span>↓</span></a>
+                </div>
+                <div className="hero-meta">
+                    <span><i /> Based in Ontario, Canada</span>
+                    <span>Open to meaningful collaborations</span>
+                </div>
             </div>
         </div>
     );

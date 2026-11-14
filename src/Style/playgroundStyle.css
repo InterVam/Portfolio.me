@@ -1,0 +1,209 @@
+.playground-container {
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.game-panel {
+    width: 100%;
+    padding: clamp(1.2rem, 3vw, 2rem);
+    background: rgba(16, 11, 34, .78);
+    border: 1px solid rgba(0, 240, 255, .38);
+    box-shadow: 0 0 0 1px rgba(255, 43, 214, .12), 0 0 32px rgba(0, 240, 255, .1);
+}
+
+.game-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+.game-header .eyebrow {
+    margin-bottom: .7rem;
+}
+
+.game-header h2 {
+    margin: 0;
+    color: var(--white);
+    font: 600 clamp(2rem, 4vw, 3.8rem)/.9 'Pixelify Sans', monospace;
+    letter-spacing: -.06em;
+}
+
+.game-header h2 em {
+    color: var(--pink);
+    font-style: normal;
+    text-shadow: 0 0 14px rgba(255, 43, 214, .65);
+}
+
+.game-stats {
+    display: flex;
+    gap: 1rem;
+    color: var(--lavender);
+    font: .55rem/1.6 'Press Start 2P', monospace;
+}
+
+.game-stats span {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    padding-left: .8rem;
+    border-left: 1px solid var(--violet-line);
+}
+
+.game-stats b {
+    color: var(--cyan);
+    font: 1rem 'Silkscreen', monospace;
+}
+
+.game-arena {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    min-height: 0;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        linear-gradient(rgba(0, 240, 255, .08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 43, 214, .08) 1px, transparent 1px),
+        #090714;
+    background-size: 36px 36px;
+    border: 1px solid var(--violet-line);
+}
+
+.game-arena::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 240, 255, .12), transparent 48%);
+    animation: arena-pulse 3s ease-in-out infinite alternate;
+}
+
+.game-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    background: rgba(7, 5, 16, .58);
+    text-align: center;
+}
+
+.game-prompt {
+    color: var(--lavender);
+    font: .7rem 'Silkscreen', monospace;
+}
+
+.game-start {
+    padding: .85rem 1rem;
+    color: var(--void);
+    background: var(--cyan);
+    border: 1px solid var(--cyan);
+    font: .6rem 'Press Start 2P', monospace;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--pink);
+    transition: transform .18s steps(2, end), box-shadow .18s steps(2, end);
+}
+
+.game-start:hover, .game-start:focus-visible {
+    background: var(--pink);
+    border-color: var(--pink);
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0 var(--lime);
+}
+
+.signal-target {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--cyan);
+    background: var(--pink);
+    box-shadow: 0 0 0 5px rgba(255, 43, 214, .2), 0 0 22px var(--cyan);
+    cursor: crosshair;
+    animation: signal-pulse .7s steps(2, end) infinite alternate;
+}
+
+.signal-target::before, .signal-target::after {
+    content: '';
+    position: absolute;
+    background: var(--cyan);
+}
+
+.signal-target::before {
+    width: 52px;
+    height: 2px;
+    top: 14px;
+    left: -11px;
+}
+
+.signal-target::after {
+    width: 2px;
+    height: 52px;
+    top: -11px;
+    left: 14px;
+}
+
+.arena-corner {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-color: var(--cyan);
+    border-style: solid;
+}
+
+.arena-corner-tl {
+    top: 10px;
+    left: 10px;
+    border-width: 2px 0 0 2px;
+}
+
+.arena-corner-br {
+    right: 10px;
+    bottom: 10px;
+    border-width: 0 2px 2px 0;
+}
+
+.game-help {
+    margin: 1rem 0 0;
+    color: var(--cool-muted);
+    font: .7rem 'Silkscreen', monospace;
+}
+
+@keyframes signal-pulse {
+    from { transform: translate(-50%, -50%) scale(.86); }
+    to { transform: translate(-50%, -50%) scale(1.12); }
+}
+
+@keyframes arena-pulse {
+    from { opacity: .45; transform: scale(1); }
+    to { opacity: 1; transform: scale(1.12); }
+}
+
+@media (max-width: 600px) {
+    .game-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .game-stats {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .game-arena {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .game-arena::before, .signal-target {
+        animation: none;
+    }
+}

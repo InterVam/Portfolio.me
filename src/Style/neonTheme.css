@@ -1,0 +1,352 @@
+:root {
+    --void: #070510;
+    --void-deep: #0b0719;
+    --panel: #100b22;
+    --panel-raised: #181133;
+    --cyan: #00f0ff;
+    --pink: #ff2bd6;
+    --lime: #b7ff00;
+    --white: #f5f2ff;
+    --lavender: #c1b8dd;
+    --violet-line: #3e2c66;
+}
+
+html, body {
+    background: var(--void) !important;
+    color: var(--white);
+}
+
+body {
+    background:
+        linear-gradient(rgba(0,240,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,43,214,.035) 1px, transparent 1px),
+        var(--void) !important;
+    background-size: 48px 48px;
+}
+
+.low-poly-background {
+    background:
+        radial-gradient(ellipse at 12% 12%, rgba(255,43,214,.26), transparent 27%),
+        radial-gradient(ellipse at 90% 28%, rgba(0,240,255,.2), transparent 30%),
+        radial-gradient(ellipse at 50% 110%, rgba(183,255,0,.12), transparent 36%),
+        var(--void) !important;
+}
+
+.low-poly-background::before {
+    background:
+        linear-gradient(rgba(0,240,255,.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,43,214,.1) 1px, transparent 1px),
+        radial-gradient(circle at 25% 45%, rgba(255,43,214,.3), transparent 25%),
+        radial-gradient(circle at 75% 55%, rgba(0,240,255,.25), transparent 28%);
+    background-size: 56px 56px, 56px 56px, auto, auto;
+}
+
+.poly-gray-0, .poly-gray-1, .poly-gray-2, .poly-gray-3 {
+    fill: #120d27;
+    stroke: #291c4d;
+}
+
+.poly-gold {
+    fill: rgba(0,240,255,.08);
+    stroke: rgba(0,240,255,.72);
+    filter: drop-shadow(0 0 7px rgba(0,240,255,.45));
+}
+
+.navBar {
+    background: rgba(7,5,16,.86);
+    border: 1px solid rgba(0,240,255,.5);
+    border-bottom: 2px solid var(--pink);
+    box-shadow: 0 0 18px rgba(0,240,255,.18), 4px 4px 0 rgba(255,43,214,.25);
+}
+
+.nav-brand {
+    color: var(--cyan);
+    border-color: var(--cyan);
+    text-shadow: 0 0 12px rgba(0,240,255,.8);
+}
+
+.nav-brand span, .nav-resume span, .nav-number {
+    color: var(--pink);
+}
+
+.navItems:hover, .navItems:focus-visible {
+    border-color: var(--pink);
+    background: rgba(255,43,214,.1);
+    box-shadow: inset 3px 0 var(--pink), 0 0 16px rgba(255,43,214,.24);
+}
+
+.navItems:hover .hoverText, .navItems:focus-visible .hoverText {
+    color: var(--cyan);
+    text-shadow: 0 0 9px rgba(0,240,255,.8);
+}
+
+.nav-resume {
+    color: var(--cyan);
+    border-color: var(--cyan);
+}
+
+.nav-resume:hover {
+    background: var(--cyan);
+    color: var(--void);
+    box-shadow: 0 0 18px rgba(0,240,255,.55);
+}
+
+.hero, .carousel-container {
+    background: rgba(16,11,34,.78);
+    border-color: rgba(0,240,255,.36);
+    box-shadow: 0 0 0 1px rgba(255,43,214,.16), 0 0 42px rgba(0,240,255,.1);
+}
+
+.header {
+    color: var(--white);
+    text-shadow: 5px 5px 0 #2c1249, 0 0 20px rgba(0,240,255,.18);
+}
+
+.header em, .experience-title em, .title em, .contact-title em {
+    color: var(--pink);
+    text-shadow: 0 0 14px rgba(255,43,214,.65);
+}
+
+.hero-role {
+    color: var(--cyan);
+    text-shadow: 0 0 8px rgba(0,240,255,.5);
+}
+
+.hero-role span {
+    color: var(--pink);
+}
+
+.eyebrow, .section-title, .project-tech h3, .note-index {
+    color: var(--cyan);
+}
+
+.infoText, .section-lede, .contact-description,
+.timeline-description, .project-description {
+    color: var(--lavender);
+}
+
+.button-primary {
+    color: var(--void);
+    background: var(--cyan);
+    border-color: var(--cyan);
+    box-shadow: 0 0 18px rgba(0,240,255,.4);
+}
+
+.button-primary:hover {
+    background: var(--pink);
+    border-color: var(--pink);
+    box-shadow: 4px 4px 0 var(--cyan), 0 0 18px rgba(255,43,214,.45);
+}
+
+.button-secondary {
+    color: var(--pink);
+    border-color: var(--pink);
+}
+
+.button-secondary:hover {
+    color: var(--void);
+    background: var(--pink);
+    box-shadow: 0 0 18px rgba(255,43,214,.45);
+}
+
+.section-heading {
+    border-left-color: var(--pink);
+}
+
+.timeline-content, .contact-item {
+    background: rgba(24,17,51,.78);
+    border-color: var(--violet-line);
+}
+
+.timeline-content:hover {
+    border-color: var(--cyan);
+    box-shadow: 5px 5px 0 var(--pink), 0 0 20px rgba(0,240,255,.16);
+}
+
+.timeline-subtitle, .timeline-duration {
+    color: var(--cyan);
+}
+
+.projects-grid .project-card {
+    background: linear-gradient(145deg, #181133, #0e091d);
+    border-color: rgba(0,240,255,.45);
+    border-top-color: var(--pink);
+    box-shadow: 6px 6px 0 rgba(255,43,214,.5);
+}
+
+.projects-grid .project-card:hover {
+    border-color: var(--cyan);
+    box-shadow: 8px 8px 0 var(--pink), 0 0 28px rgba(0,240,255,.2);
+}
+
+.project-title {
+    color: var(--white);
+    border-bottom-color: var(--violet-line);
+}
+
+.project-title::before {
+    color: var(--pink);
+}
+
+.project-tech {
+    border-bottom-color: var(--violet-line);
+}
+
+.github-link, .project-link {
+    color: var(--cyan);
+    border-color: var(--cyan);
+}
+
+.github-link:hover, .project-link:hover {
+    color: var(--void);
+    background: var(--cyan);
+}
+
+.contact-title {
+    color: var(--white);
+}
+
+.contact-label, .contact-link:hover {
+    color: var(--pink);
+}
+
+.contact-link, .contact-text {
+    color: var(--white);
+}
+
+.social-link {
+    border-color: var(--violet-line);
+    background: rgba(16,11,34,.6);
+}
+
+.social-link:hover {
+    background: var(--pink);
+    border-color: var(--pink);
+    box-shadow: 4px 4px 0 var(--cyan);
+}
+
+.social-link span {
+    color: var(--cyan);
+}
+
+.social-link:hover span {
+    color: var(--void);
+}
+
+.loading-overlay {
+    background:
+        radial-gradient(circle at 50% 42%, rgba(0,240,255,.14), transparent 28%),
+        var(--void) !important;
+}
+
+.loading-overlay::before {
+    background: repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(0,240,255,.14) 4px);
+}
+
+.loading-logo {
+    color: var(--cyan) !important;
+    text-shadow: 0 0 7px var(--cyan), 0 0 22px rgba(255,43,214,.7) !important;
+}
+
+.loading-bar {
+    background: rgba(255,43,214,.18);
+    border-color: var(--pink);
+}
+
+.loading-progress {
+    background: var(--pink);
+    box-shadow: 0 0 14px var(--pink);
+}
+
+a:focus-visible, button:focus-visible {
+    outline-color: var(--cyan);
+}
+
+.landPage {
+    position: relative;
+    isolation: isolate;
+}
+
+.landPage::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: radial-gradient(
+        circle 260px at var(--pointer-x, 50%) var(--pointer-y, 35%),
+        rgba(0, 240, 255, .08),
+        transparent 72%
+    );
+    mix-blend-mode: screen;
+}
+
+.main-container, .navBar {
+    z-index: 2;
+}
+
+.navBar {
+    z-index: 1000 !important;
+}
+
+html {
+    scroll-padding-top: 92px;
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1);
+}
+
+.section.is-visible,
+#about {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navItems.is-active {
+    color: var(--cyan);
+    border-color: var(--cyan);
+    background: rgba(0, 240, 255, .08);
+    box-shadow: inset 3px 0 var(--cyan), 0 0 14px rgba(0, 240, 255, .18);
+}
+
+.navItems.is-active .hoverText {
+    color: var(--cyan);
+    text-shadow: 0 0 8px rgba(0, 240, 255, .7);
+}
+
+.timeline-content,
+.project-card,
+.social-link,
+.button,
+.game-start {
+    will-change: transform;
+}
+
+.timeline-content:hover {
+    transform: translateY(-7px) scale(1.01);
+}
+
+.social-link:hover {
+    transform: translateY(-6px) rotate(-1deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .section {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .landPage::after {
+        display: none;
+    }
+}
+
+/* Lime is reserved for success/status feedback, not decoration. */
+.status-dot {
+    background: var(--lime);
+    box-shadow: 0 0 9px rgba(183,255,0,.8);
+}

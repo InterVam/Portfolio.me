@@ -1,78 +1,48 @@
 import '../Style/navStyle.css'
-import 'animate.css';
-import React, { useState, useEffect } from 'react';
-
-const BubbleText = ({name}) => {
-    return (
-      <span className='hoverText'>
-        {name.split("").map((child, idx) => (
-          <span key={idx}>
-            {child}
-          </span>
-        ))}
-      </span>
-    );
-};
+import { useEffect, useState } from 'react';
 
 function Navbar() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 500);
-  
-  // Update isMobile state on window resize
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 500);
-    };
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  
-  // Simple scroll function - just navigate to section
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  };
+  const [activeSection, setActiveSection] = useState('about');
+  const links = [
+    ['01', 'About', 'about'],
+    ['02', 'Experience', 'experience'],
+    ['03', 'Work', 'projects'],
+    ['04', 'Play', 'playground'],
+    ['05', 'Contact', 'contact'],
+  ];
 
-  // Don't render anything on mobile
-  if (isMobile) {
-    return null;
-  }
-  
-  // Desktop navbar (vertical on the left)
-  return ( 
-    <nav className="navBar">
-      <div className='navbarList'>
-        <li 
-          className="navItems"
-          onClick={() => scrollToSection('about')}
-        >
-          <BubbleText name={"About"}/>
-        </li>
-        <li 
-          className="navItems"
-          onClick={() => scrollToSection('experience')}
-        >
-          <BubbleText name={"Experience"}/>
-        </li>
-        <li 
-          className="navItems"
-          onClick={() => scrollToSection('projects')}
-        >
-          <BubbleText name={"Projects"}/>
-        </li>
-        <li 
-          className="navItems"
-          onClick={() => scrollToSection('contact')}
-        >
-          <BubbleText name={"Contact"}/>
-        </li>
+  useEffect(() => {
+    const sections = links
+      .map(([, , id]) => document.getElementById(id))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visible) setActiveSection(visible.target.id);
+      },
+      { rootMargin: '-25% 0px -55% 0px', threshold: [0, .25, .6] }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <nav className="navBar" aria-label="Main navigation">
+      <a className="nav-brand" href="#about" aria-label="Youssef Fathi home">YF<span>.</span></a>
+      <div className="navbarList">
+        {links.map(([number, label, id]) => (
+          <a className={`navItems ${activeSection === id ? 'is-active' : ''}`} href={`#${id}`} key={id}>
+            <span className="nav-number">{number}</span>
+            <span className="hoverText">{label}</span>
+          </a>
+        ))}
       </div>
+      <a className="nav-resume" href="/Youssef-Fathi-Resume.pdf" download>Download CV <span>↓</span></a>
     </nav>
   );
 }
