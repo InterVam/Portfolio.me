@@ -3,18 +3,16 @@ import Navbar from './Components/Navbar'
 import Container from './Components/Container'
 import LoadingAnimation from './Components/LoadingAnimation'
 import LowPolyBackground from './Components/LowPolyBackground'
+import PixelCursorTrail from './Components/PixelCursorTrail'
+import GlitchEngine from './Components/GlitchEngine'
 
 function Landing() {
-  const handlePointerMove = (event) => {
-    const { clientX, clientY } = event;
-    document.documentElement.style.setProperty('--pointer-x', `${clientX}px`);
-    document.documentElement.style.setProperty('--pointer-y', `${clientY}px`);
-  };
-
   return (
-    <div className='landPage' onPointerMove={handlePointerMove}>
+    <div className='landPage'>
       <LoadingAnimation />
       <LowPolyBackground />
+      <GlitchEngine />
+      <PixelCursorTrail />
       <Navbar/>
       <Container/>
     </div>

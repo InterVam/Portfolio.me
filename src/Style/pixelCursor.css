@@ -1,0 +1,88 @@
+.pixel-cursor-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.pixel-bit {
+    position: fixed;
+    image-rendering: pixelated;
+    box-shadow: none;
+    filter: none;
+}
+
+.pixel-bit--block {
+    border: 1px solid rgba(7, 5, 16, 0.8);
+}
+
+.pixel-bit--dot {
+    border-radius: 0;
+}
+
+.pixel-bit--shard {
+    border-left: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    background: transparent !important;
+    color: inherit;
+}
+
+.pixel-bit--bracket {
+    border: 2px solid;
+    background: transparent !important;
+}
+
+.pixel-cursor-head {
+    position: fixed;
+    width: 13px;
+    height: 13px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    image-rendering: pixelated;
+}
+
+.pixel-cursor-head::before,
+.pixel-cursor-head::after {
+    content: '';
+    position: absolute;
+    background: #00f0ff;
+}
+
+.pixel-cursor-head::before {
+    width: 13px;
+    height: 3px;
+    top: 5px;
+    left: 0;
+    box-shadow: 0 0 0 1px #070510;
+}
+
+.pixel-cursor-head::after {
+    width: 3px;
+    height: 13px;
+    top: 0;
+    left: 5px;
+    background: #ff2bd6;
+    box-shadow: 0 0 0 1px #070510;
+}
+
+.landPage,
+.landPage * {
+    cursor: none !important;
+}
+
+.landPage input,
+.landPage textarea {
+    cursor: text !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pixel-cursor-layer {
+        display: none;
+    }
+
+    .landPage,
+    .landPage * {
+        cursor: auto !important;
+    }
+}

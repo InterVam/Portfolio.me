@@ -267,20 +267,6 @@ a:focus-visible, button:focus-visible {
     isolation: isolate;
 }
 
-.landPage::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    background: radial-gradient(
-        circle 260px at var(--pointer-x, 50%) var(--pointer-y, 35%),
-        rgba(0, 240, 255, .08),
-        transparent 72%
-    );
-    mix-blend-mode: screen;
-}
-
 .main-container, .navBar {
     z-index: 2;
 }
@@ -340,9 +326,6 @@ html {
         transition: none;
     }
 
-    .landPage::after {
-        display: none;
-    }
 }
 
 /* Lime is reserved for success/status feedback, not decoration. */

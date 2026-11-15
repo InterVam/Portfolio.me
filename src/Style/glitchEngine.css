@@ -1,0 +1,95 @@
+.glitch-engine {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.glitch-engine--burst {
+    mix-blend-mode: normal;
+}
+
+.glitch-patch {
+    position: fixed;
+    image-rendering: pixelated;
+    border: 1px solid;
+    overflow: hidden;
+    opacity: 0.42;
+    box-shadow:
+        2px 0 0 rgba(0, 240, 255, 0.18),
+        -2px 0 0 rgba(255, 43, 214, 0.16);
+}
+
+.glitch-patch--cyan {
+    border-color: #00f0ff;
+}
+
+.glitch-patch--pink {
+    border-color: #ff2bd6;
+}
+
+.glitch-patch--flicker {
+    animation: patch-flicker 0.12s steps(2) 3;
+}
+
+.glitch-patch-ghost {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    image-rendering: pixelated;
+}
+
+.glitch-patch-ghost--cyan {
+    background: rgba(0, 240, 255, 0.08);
+    mix-blend-mode: screen;
+}
+
+.glitch-patch-ghost--pink {
+    background: rgba(255, 43, 214, 0.07);
+    mix-blend-mode: screen;
+}
+
+.glitch-micro {
+    position: absolute;
+    background: rgba(7, 5, 16, 0.55);
+    border: 1px solid rgba(245, 242, 255, 0.14);
+    image-rendering: pixelated;
+}
+
+.glitch-micro:nth-child(3n) {
+    background: rgba(0, 240, 255, 0.16);
+}
+
+.glitch-micro:nth-child(4n) {
+    background: rgba(255, 43, 214, 0.14);
+}
+
+html.glitch-hit .low-poly-background {
+    transform: translateX(var(--glitch-shift, -8px));
+}
+
+html.glitch-hit .low-poly-svg {
+    transform: translateX(calc(var(--glitch-shift, -8px) * -1.2));
+}
+
+@keyframes patch-flicker {
+    0%,
+    100% {
+        opacity: 0.42;
+    }
+    50% {
+        opacity: 0.28;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .glitch-engine {
+        display: none;
+    }
+
+    html.glitch-hit .low-poly-background,
+    html.glitch-hit .low-poly-svg {
+        transform: none;
+    }
+}

@@ -1,0 +1,30 @@
+/* Kill legacy infinite background animations (retro stack) — keeps scene steady between glitch hits. */
+body::before,
+.low-poly-background,
+.low-poly-background::before,
+.low-poly-background::after,
+.low-poly-svg,
+.poly-gold,
+.poly-gray-0,
+.poly-gray-1,
+.poly-gray-2,
+.poly-gray-3,
+.glitch-bg,
+.glitch-slice,
+.glitch-chroma {
+    animation: none !important;
+}
+
+.poly-gold {
+    filter: none !important;
+    opacity: 0.75 !important;
+}
+
+.low-poly-background::after {
+    opacity: 0.08 !important;
+    transform: none !important;
+}
+
+.low-poly-svg {
+    transform: none !important;
+}
